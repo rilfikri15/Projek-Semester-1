@@ -1,0 +1,60 @@
+#include<stdio.h>
+
+int main(){
+	int uang, kembali, minum, j;
+	char i;
+	
+	printf("SELAMAT DATANG DI PROGRAM FENDING MACHINE\n");
+	printf("-----------------------------------------\n");
+ulang :
+	printf("Masukkan nominal uang (5000 - 15000) = "); scanf("%d", &uang);
+	
+sini :
+	if(uang < 5000){
+		printf("Nominal yang anda masukkan salah\n\n");
+		goto ulang;
+	}else if(uang == 5000){
+		printf("\nPilihan Minuman :\n");
+		printf("1. Coca Cola\n2. Sprite\n");
+	}else if(uang == 10000){
+		printf("\nPilihan Minuman :\n");
+		printf("1. Coca Cola\n2. Sprite\n3. Bear Brand\n4. YOU C1000\n");
+	}else if(uang == 15000){
+		printf("\nPilihan Minuman :\n");
+		printf("1. Coca Cola\n2. Sprite\n3. Bear Brand\n4. YOU C1000\n5. Expresso\n6. Americanon\n7. Latte");
+	} else{
+		printf("\nPilihan Minuman :\n");
+		printf("1. Coca Cola\n2. Sprite\n3. Bear Brand\n4. YOU C1000\n5. Expresso\n6. Americanon\n7. Latte\n");
+		kembali = uang - 15000;
+		printf("\nSaldo anda %d\n", kembali);	
+	}
+	
+	printf("\nMasukkan nomer minuman yang anda pilih = "), scanf("%d", &minum);
+	switch(minum){
+		case 1 : printf("Anda memilih Coca Cola"); break;
+		case 2 : printf("Anda memilih Sprite"); break;
+		case 3 : printf("Anda memilih Bear Brand"); break;
+		case 4 : printf("Anda memilih YOU C1000"); break;
+		case 5 : printf("Anda memilih Expresso"); break;
+		case 6 : printf("Anda memilih Americano"); break;
+		case 7 : printf("Anda memilih Latte"); break;
+	}
+	
+	if(kembali !=0){
+		printf("\nAnda masih memiliki kembalian %d apakah anda ingin membeli minuman lagi (y/n)? ", kembali, j); 
+		scanf("%c", &j);
+		if(j == 'y'){
+			goto sini;
+		}else{
+			printf("Terimakasih");
+		}
+	}else{
+		
+	}
+	
+	printf("\n\nTerimakasih");
+	
+
+	
+	return 0;
+}
